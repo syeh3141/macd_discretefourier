@@ -3,6 +3,7 @@
 Created on Wed Aug 29 13:20:17 2018
 
 @author: syeh3
+Methods for Fourier signal analysis of MACD and Signal Line Differences
 """
 import macd
 import numpy as np
@@ -31,6 +32,9 @@ def macdFourier(stockData):
 
 
 def macdFourierHalf(stockData):
+    """DFT on Half of Sample Size
+    Then increment each day to aggregate
+    over the whole sample"""
     
     firstPoint = 0
     
@@ -56,6 +60,10 @@ def macdFourierHalf(stockData):
 
 
 def macdFourierTwoThird(stockData):
+    """DFT on two third of Sample Size
+    Then increment each day to aggregate
+    over the whole sample"""
+    
     
     firstPoint = 0
     
@@ -79,7 +87,9 @@ def macdFourierTwoThird(stockData):
 
 
 def macdFourierOneThird(stockData):
-    
+    """DFT on one third of Sample Size
+    Then increment each day to aggregate
+    over the whole sample"""
     firstPoint = 0
     
     oneThirdPoint = int(len(stockData)/3)
@@ -102,7 +112,7 @@ def macdFourierOneThird(stockData):
 
 
 def showHistogramPlot(listOfFrequencyBins):
-    
+    """Shows histogram plot of frequency bins""""
     allFreqArray = np.array(listOfFrequencyBins)
     
     plt.hist(allFreqArray, bins = np.arange(allFreqArray.min(), allFreqArray.max() + 1))
