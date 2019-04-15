@@ -3,6 +3,7 @@
 Created on Tue Sep  4 17:20:41 2018
 
 @author: syeh3
+Script to run on stock data for DFTs
 """
 
 import macdfourier as mf
